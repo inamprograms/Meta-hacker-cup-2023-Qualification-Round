@@ -3,15 +3,17 @@
 #include<fstream>
 #include<vector>
 using namespace std;
-ofstream file("D:/Git Hub Repos/Meta hacker cup/2023/Qualification Round/Problem 3/output.txt");
+ifstream fileRead("D:/Git Hub Repos/Meta hacker cup 2023 - Qualification Round/Problem 3/dim_sum_delivery_input.txt");
+ofstream file("D:/Git Hub Repos/Meta hacker cup 2023 - Qualification Round/Problem 3/output.txt");
 void calculate(int test_case){
-    int R, C, A, B;
-    cin >> R >> C >> A >> B;
-    int AstateR = 1;
-    int BstateC = 1;
+    long long int R, C, A, B;
+    // cin >> R >> C >> A >> B;
+    fileRead >> R >> C >> A >> B;
+    long long int AstateR = 1;
+    long long int BstateC = 1;
 
-    int AstateC = 1;
-    int BstateR = 1;
+    long long int AstateC = 1;
+    long long int BstateR = 1;
     cout << "Case #" << test_case << ": ";
     file << "Case #" << test_case << ": ";
     while (AstateR <= R && BstateC <= C)
@@ -35,7 +37,7 @@ void calculate(int test_case){
             }
             // BstateC = AstateR;
 
-            int moveRequiredToCompleteB = C- BstateC;
+            long long int moveRequiredToCompleteB = C- BstateC;
             if (moveRequiredToCompleteB < B)
             {
                 BstateC += moveRequiredToCompleteB;   
@@ -59,7 +61,8 @@ void calculate(int test_case){
 int main(){ 
 
     int test_cases;
-    cin >> test_cases;
+    // cin >> test_cases;
+    fileRead >> test_cases;
 
 
     for(int tc = 1; tc <=test_cases; tc++){ 
